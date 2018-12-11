@@ -1,0 +1,24 @@
+Script started on 2018-12-06 17:35:06+0100
+
+$ ls
+create-debian-image.txt  debian-9.6.0-amd64-xfce-CD-1.iso
+
+$ qemu-img create -f qcow2 myDebian.qcow2 10G
+Formatting 'myDebian.qcow2', fmt=qcow2 size=10737418240 cluster_size=65536 lazy_refcounts=off refcount_bits=16
+
+$ qemu-system-x86_64 -hda myDebian.qcow2 -cdrom debian-9.6.0-amd64-xfce-CD-1.iso -boot d -m 2048
+qemu-system-x86_64: warning: TCG doesn't support requested feature: CPUID.01H:ECX.vmx [bit 5]
+No protocol specified
+Could not initialize SDL(No available video device) - exiting
+
+# terminal crashed
+Script started on 2018-12-06 18:17:26+0100
+
+$ sudo -u mirko xhost +
+access control disabled, clients can connect from any host
+
+$ qemu-system-x86_64 -hda myDebian.qcow2 -cdrom debian-9.6.0-amd64-xfce-CD-1.iso -boot d -m 2048
+qemu-system-x86_64: warning: TCG doesn't support requested feature: CPUID.01H:ECX.vmx [bit 5]
+
+$ exit
+Script done on 2018-12-06 18:58:44+0100
