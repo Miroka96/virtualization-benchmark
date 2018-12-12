@@ -1,4 +1,8 @@
-#!/bin/bash
+#!/bin/bash -e
+
+if ! which smartctl > /dev/null
+then sudo apt-get install smartmontools
+fi
 
 echo "####################"
 echo "###### CPUINFO #####"
