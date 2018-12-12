@@ -1,0 +1,104 @@
+Script started on 2018-12-10 15:51:38+0100
+
+# initial vm can be run - just needs a display defined in the shell
+meth@tiger:~$ qemu-system-x86_64 -hda myDebian.qcow2 -m 2048
+qemu-system-x86_64: warning: TCG doesn't support requested feature: CPUID.01H:ECX.vmx [bit 5]
+unknown keycodes `(unnamed)', please report to qemu-devel@nongnu.org
+
+# this file will be needed later and seems to be quite different among different systems
+meth@tiger:~$ cat /etc/qemu-ifup
+#! /bin/sh
+# Script to bring a network (tap) device for qemu up.
+# The idea is to add the tap device to the same bridge
+# as we have default routing to.
+
+# in order to be able to find brctl
+PATH=$PATH:/sbin:/usr/sbin
+ip=$(which ip)
+
+if [ -n "$ip" ]; then
+   ip link set "$1" up
+else
+   brctl=$(which brctl)
+   if [ ! "$ip" -o ! "$brctl" ]; then
+     echo "W: $0: not doing any bridge processing: neither ip nor brctl utility not found" >&2
+     exit 0
+   fi
+   ifconfig "$1" 0.0.0.0 up
+fi
+
+switch=$(ip route ls | \
+    awk '/^default / {
+          for(i=0;i<NF;i++) { if ($i == "dev") { print $(i+1); next; } }
+         }'
+        )
+
+# only add the interface to default-route bridge if we
+# have such interface (with default route) and if that
+# interface is actually a bridge.
+# It is possible to have several default routes too
+for br in $switch; do
+    if [ -d /sys/class/net/$br/bridge/. ]; then
+        if [ -n "$ip" ]; then
+          ip link set "$1" master "$br"
+        else
+          brctl addif $br "$1"
+        fi
+        exit	# exit with status of the previous command
+    fi
+done
+
+echo "W: $0: no bridge for guest interface found" >&2
+
+# my IP config often broke during testing, mostly because two interfaces (real interface + bridge) created the same route or the default gateway went lost
+# this time it seems okay
+meth@tiger:~$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         _gateway        0.0.0.0         UG    100    0        0 br0
+link-local      0.0.0.0         255.255.0.0     U     1000   0        0 virbr0
+172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 docker0
+192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 br0
+_gateway        0.0.0.0         255.255.255.255 UH    100    0        0 br0
+192.168.122.0   0.0.0.0         255.255.255.0   U     0      0        0 virbr0
+
+### shell died
+# moved some files
+
+Script started on 2018-12-11 10:02:16+0100
+
+# the VM is not yet reachable from the host network
+# therefore attach two "network cables" to a virtual switch 
+# - a VM nic
+# - a host tap device (in our case bridging the default gateway using bridge br0)
+#   - adding a tap device and adding it to a bridge device requires still root permissions
+meth@tiger:~/virtualization-benchmark$ sudo qemu-system-x86_64 -hda myDebian.qcow2 -m 2048 -net nic -net tap -vnc :1
+qemu-system-x86_64: warning: TCG doesn't support requested feature: CPUID.01H:ECX.vmx [bit 5]
+^Cqemu-system-x86_64: terminating on signal 2
+
+# following steps prepare a tap device for use by qemu run by a normal user
+# - create a tap device and let user 'meth' own it
+meth@tiger:~/virtualization-benchmark$ sudo ip tuntap add dev tap0 mode tap user meth
+# - bring it up
+meth@tiger:~/virtualization-benchmark$ sudo ip link set tap0 up
+# - bridge it with all default route bridges
+meth@tiger:~/virtualization-benchmark$ sudo /etc/qemu-ifup tap0
+
+# a normal user is now able to use it without further modifications
+# --> networked VM without root access
+meth@tiger:~/virtualization-benchmark$ qemu-system-x86_64 -hda myDebian.qcow2 -m 2048 -net nic -net tap,ifname=tap0,script=no,downscript=no -vnc :1
+qemu-system-x86_64: warning: TCG doesn't support requested feature: CPUID.01H:ECX.vmx [bit 5]
+^Cqemu-system-x86_64: terminating on signal 2
+
+# undo the manual network setup
+meth@tiger:~/virtualization-benchmark$ sudo /etc/qemu-ifdown tap0
+meth@tiger:~/virtualization-benchmark$ sudo ip link set tap0 down
+meth@tiger:~/virtualization-benchmark$ sudo ip tuntap del dev tap0 mode tap
+
+# the tap device is no longer existent
+meth@tiger:~/virtualization-benchmark$ ifconfig -a | grep tap
+
+meth@tiger:~/virtualization-benchmark$ exit
+
+Script done on 2018-12-11 10:20:01+0100
+
