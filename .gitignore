@@ -1,2 +1,5 @@
 *.iso
 *.qcow2
+benchmarks/forksum
+benchmarks/memsweep
+benchmarks/linpack
