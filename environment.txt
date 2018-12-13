@@ -12,7 +12,7 @@ model		: 158
 model name	: Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz
 stepping	: 9
 microcode	: 0x8e
-cpu MHz		: 4500.410
+cpu MHz		: 1200.016
 cache size	: 8192 KB
 physical id	: 0
 siblings	: 8
@@ -105,36 +105,36 @@ Processor Information
 ###### MEMINFO #####
 ####################
 MemTotal:       16354564 kB
-MemFree:         6842584 kB
-MemAvailable:   12395024 kB
-Buffers:          394700 kB
-Cached:          5321576 kB
+MemFree:         6557764 kB
+MemAvailable:   11773648 kB
+Buffers:          651368 kB
+Cached:          4841960 kB
 SwapCached:            0 kB
-Active:          5449476 kB
-Inactive:        3110976 kB
-Active(anon):    2847068 kB
-Inactive(anon):   248740 kB
-Active(file):    2602408 kB
-Inactive(file):  2862236 kB
+Active:          5977160 kB
+Inactive:        2866492 kB
+Active(anon):    3354672 kB
+Inactive(anon):   353292 kB
+Active(file):    2622488 kB
+Inactive(file):  2513200 kB
 Unevictable:          80 kB
 Mlocked:              80 kB
 SwapTotal:             0 kB
 SwapFree:              0 kB
-Dirty:              5772 kB
+Dirty:               108 kB
 Writeback:             0 kB
-AnonPages:       2843900 kB
-Mapped:          1172996 kB
-Shmem:            251628 kB
-Slab:             641956 kB
-SReclaimable:     428988 kB
-SUnreclaim:       212968 kB
-KernelStack:       18596 kB
-PageTables:        68560 kB
+AnonPages:       3350108 kB
+Mapped:          1326088 kB
+Shmem:            357636 kB
+Slab:             636064 kB
+SReclaimable:     421388 kB
+SUnreclaim:       214676 kB
+KernelStack:       18900 kB
+PageTables:        74380 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
 CommitLimit:     8177280 kB
-Committed_AS:   10283636 kB
+Committed_AS:   11406868 kB
 VmallocTotal:   34359738367 kB
 VmallocUsed:           0 kB
 VmallocChunk:          0 kB
@@ -149,8 +149,8 @@ HugePages_Free:        0
 HugePages_Rsvd:        0
 HugePages_Surp:        0
 Hugepagesize:       2048 kB
-DirectMap4k:      707480 kB
-DirectMap2M:    15998976 kB
+DirectMap4k:     1420184 kB
+DirectMap2M:    15286272 kB
 DirectMap1G:           0 kB
 
 ####################
@@ -277,7 +277,7 @@ Rotation Rate:    Solid State Device
 Device is:        In smartctl database [for details use: -P show]
 ATA Version is:   ACS-2, ATA8-ACS T13/1699-D revision 4c
 SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
-Local Time is:    Wed Dec 12 17:23:26 2018 CET
+Local Time is:    Thu Dec 13 11:28:50 2018 CET
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -298,7 +298,7 @@ Form Factor:      2.5 inches
 Device is:        Not in smartctl database [for details use: -P showall]
 ATA Version is:   ACS-2 T13/2015-D revision 3
 SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
-Local Time is:    Wed Dec 12 17:23:26 2018 CET
+Local Time is:    Thu Dec 13 11:28:50 2018 CET
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -320,7 +320,7 @@ Form Factor:      3.5 inches
 Device is:        In smartctl database [for details use: -P show]
 ATA Version is:   ACS-2, ACS-3 T13/2161-D revision 3b
 SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
-Local Time is:    Wed Dec 12 17:23:26 2018 CET
+Local Time is:    Thu Dec 13 11:28:50 2018 CET
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 

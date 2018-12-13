@@ -1,9 +1,11 @@
 #!/bin/bash -e
 
-if [[ "${0%/*}" == "/*" ]]
-then BASE="${0%/*}"
-else BASE="$(pwd)"
-fi
+BASE=$(realpath $(dirname $(
+	if which "$0" > /dev/null
+	then which "$0"
+	else "$0"
+	fi
+)))
 
 OUT="$BASE/environment.txt"
 
