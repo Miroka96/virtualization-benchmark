@@ -1,7 +1,8 @@
+#include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <sys/wait.h>
 #include <unistd.h>
-#include <math.h>
 
 void fork_child( long from,  long to, int * pipe);
 
@@ -67,6 +68,6 @@ int main(int argc, char const *argv[])
     int to = atoi(argv[2]);
     printf("%d %d\n", from, to);
     long sum = get_sum(from, to);
-    printf("finally %ld", sum);
+    printf("finally %ld\n", sum);
     return 0;
 }
