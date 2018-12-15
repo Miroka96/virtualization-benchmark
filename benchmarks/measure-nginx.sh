@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./measure-generic.sh "" "${0%.sh}-exec.sh" "nginx"
+./measure-generic.sh "" "${0%.sh}-exec.sh" "nginx" 5 $@

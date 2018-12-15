@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./measure-generic.sh "" "${0%.sh}-exec.sh" "fork"
+./measure-generic.sh "" "${0%.sh}-exec.sh" "fork" 5
