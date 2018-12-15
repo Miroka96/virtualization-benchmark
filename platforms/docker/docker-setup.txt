@@ -1,0 +1,14 @@
+# First we build all required docker images for the benchmarks.
+docker build -t cpu_bench -f cpu.Dockerfile ../.. &&
+docker build -t mem_bench -f mem.Dockerfile ../.. &&
+docker build -t disk-random_bench -f disk-random.Dockerfile ../.. &&
+docker build -t fork_bench -f fork.Dockerfile ../.. &&
+docker build -t nginx_bench -f nginx.Dockerfile ../.. &&
+
+# Then we run all the containers and store their benchmark results in the csvs.
+docker run cpu_bench > docker-cpu.csv &&
+docker run mem_bench > docker-mem.csv &&
+docker run disk-random_bench > docker-disk-random.csv &&
+docker run fork_bench > docker-fork.csv &&
+docker run nginx_bench > docker-nginx.csv
+
