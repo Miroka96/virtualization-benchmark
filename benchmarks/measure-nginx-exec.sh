@@ -2,7 +2,7 @@
 
 URL="http://localhost/big.data"
 THREADS=20
-ITERATIONS=100
+ITERATIONS=12
 
 
 if ! [ -z "$1" ]
@@ -22,11 +22,8 @@ else
 	exit 1
 fi
 
-(time
-(for i in $(seq $THREADS)
-do sh -c "for j in \$(seq $ITERATIONS); do $DOWNLOADER; done" & 2> /dev/null &
-# need to introduce a loop
-
+(time (for i in $(seq $THREADS)
+do sh -c "for j in \$(seq $ITERATIONS); do $DOWNLOADER 2> /dev/null ; done" &
 done
 wait
 )) 2>&1 |

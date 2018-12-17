@@ -1,4 +1,150 @@
 ##############################
+########## docker ###########
+##############################
+
+####################
+###### CPUINFO #####
+####################
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz
+stepping	: 9
+microcode	: 0x8e
+cpu MHz		: 4496.683
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 8400.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+####################
+###### CPU DEV #####
+####################
+# dmidecode 3.0
+Scanning /dev/mem for entry point.
+
+####################
+###### MEMINFO #####
+####################
+MemTotal:       16354556 kB
+MemFree:         5973024 kB
+MemAvailable:   11930516 kB
+Buffers:          627196 kB
+Cached:          5634340 kB
+SwapCached:            0 kB
+Active:          6946880 kB
+Inactive:        2471108 kB
+Active(anon):    3158916 kB
+Inactive(anon):   425536 kB
+Active(file):    3787964 kB
+Inactive(file):  2045572 kB
+Unevictable:          48 kB
+Mlocked:              48 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:              1172 kB
+Writeback:             0 kB
+AnonPages:       3155908 kB
+Mapped:          1251516 kB
+Shmem:            428004 kB
+Slab:             656680 kB
+SReclaimable:     465284 kB
+SUnreclaim:       191396 kB
+KernelStack:       19228 kB
+PageTables:        72124 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     8177276 kB
+Committed_AS:   10792268 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      510872 kB
+DirectMap2M:    10952704 kB
+DirectMap1G:     5242880 kB
+
+####################
+###### MEM DEV #####
+####################
+# dmidecode 3.0
+Scanning /dev/mem for entry point.
+
+####################
+###### HDD DEV #####
+####################
+
+
+####################
+###### OS RLSE #####
+####################
+
+###### /etc/os-release ####
+PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+NAME="Debian GNU/Linux"
+VERSION_ID="9"
+VERSION="9 (stretch)"
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+
+####################
+###### KERNEL ######
+####################
+Linux d4dd9c402693 4.15.0-42-generic #45-Ubuntu SMP Thu Nov 15 19:32:57 UTC 2018 x86_64 GNU/Linux
+
+####################
+####### GCC ########
+####################
+gcc (Debian 6.3.0-18+deb9u1) 6.3.0 20170516
+Copyright (C) 2016 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+####################
+###### NGINX #######
+####################
+nginx version: nginx/1.10.3
+built with OpenSSL 1.1.0f  25 May 2017 (running with OpenSSL 1.1.0j  20 Nov 2018)
+TLS SNI support enabled
+configure arguments: --with-cc-opt='-g -O2 -fdebug-prefix-map=/build/nginx-0TiIP5/nginx-1.10.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2' --with-ld-opt='-Wl,-z,relro -Wl,-z,now' --prefix=/usr/share/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --modules-path=/usr/lib/nginx/modules --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi --with-debug --with-pcre-jit --with-ipv6 --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_v2_module --with-http_dav_module --with-http_slice_module --with-threads --with-http_addition_module --with-http_geoip_module=dynamic --with-http_gunzip_module --with-http_gzip_static_module --with-http_image_filter_module=dynamic --with-http_sub_module --with-http_xslt_module=dynamic --with-stream=dynamic --with-stream_ssl_module --with-mail=dynamic --with-mail_ssl_module --add-dynamic-module=/build/nginx-0TiIP5/nginx-1.10.3/debian/modules/nginx-auth-pam --add-dynamic-module=/build/nginx-0TiIP5/nginx-1.10.3/debian/modules/nginx-dav-ext-module --add-dynamic-module=/build/nginx-0TiIP5/nginx-1.10.3/debian/modules/nginx-echo --add-dynamic-module=/build/nginx-0TiIP5/nginx-1.10.3/debian/modules/nginx-upstream-fair --add-dynamic-module=/build/nginx-0TiIP5/nginx-1.10.3/debian/modules/ngx_http_substitutions_filter_module
+
+####################
+####### FIO ########
+####################
+fio-2.16
+
+
+##############################
 ########## kvm ###########
 ##############################
 
@@ -69,36 +215,36 @@ Processor Information
 ###### MEMINFO #####
 ####################
 MemTotal:        2052464 kB
-MemFree:         1940416 kB
-MemAvailable:    1900468 kB
-Buffers:            9040 kB
-Cached:            54104 kB
+MemFree:         1939696 kB
+MemAvailable:    1899760 kB
+Buffers:            9028 kB
+Cached:            54088 kB
 SwapCached:            0 kB
-Active:            49500 kB
-Inactive:          27380 kB
-Active(anon):      13896 kB
-Inactive(anon):     2796 kB
-Active(file):      35604 kB
-Inactive(file):    24584 kB
+Active:            50356 kB
+Inactive:          27044 kB
+Active(anon):      14436 kB
+Inactive(anon):     2780 kB
+Active(file):      35920 kB
+Inactive(file):    24264 kB
 Unevictable:           0 kB
 Mlocked:               0 kB
 SwapTotal:       2094076 kB
 SwapFree:        2094076 kB
-Dirty:                20 kB
+Dirty:               348 kB
 Writeback:             0 kB
-AnonPages:         13732 kB
-Mapped:            17796 kB
-Shmem:              2912 kB
-Slab:              19452 kB
-SReclaimable:      10792 kB
-SUnreclaim:         8660 kB
-KernelStack:        1296 kB
+AnonPages:         14276 kB
+Mapped:            17456 kB
+Shmem:              2936 kB
+Slab:              19600 kB
+SReclaimable:      10820 kB
+SUnreclaim:         8780 kB
+KernelStack:        1304 kB
 PageTables:         2324 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
 CommitLimit:     3120308 kB
-Committed_AS:      54316 kB
+Committed_AS:      50372 kB
 VmallocTotal:   34359738367 kB
 VmallocUsed:           0 kB
 VmallocChunk:          0 kB
@@ -162,7 +308,7 @@ User Capacity:    10,737,418,240 bytes [10.7 GB]
 Sector Size:      512 bytes logical/physical
 Device is:        Not in smartctl database [for details use: -P showall]
 ATA Version is:   ATA/ATAPI-7, ATA/ATAPI-5 published, ANSI NCITS 340-2000
-Local Time is:    Mon Dec 17 07:17:10 2018 EST
+Local Time is:    Mon Dec 17 08:07:43 2018 EST
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -225,7 +371,7 @@ model		: 158
 model name	: Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz
 stepping	: 9
 microcode	: 0x8e
-cpu MHz		: 4500.200
+cpu MHz		: 4500.822
 cache size	: 8192 KB
 physical id	: 0
 siblings	: 8
@@ -318,36 +464,36 @@ Processor Information
 ###### MEMINFO #####
 ####################
 MemTotal:       16354556 kB
-MemFree:         8655168 kB
-MemAvailable:   12240856 kB
-Buffers:          545324 kB
-Cached:          3309616 kB
+MemFree:         5999320 kB
+MemAvailable:   11956916 kB
+Buffers:          627276 kB
+Cached:          5634636 kB
 SwapCached:            0 kB
-Active:          4429700 kB
-Inactive:        2396452 kB
-Active(anon):    2973616 kB
-Inactive(anon):   314048 kB
-Active(file):    1456084 kB
-Inactive(file):  2082404 kB
+Active:          6922972 kB
+Inactive:        2471132 kB
+Active(anon):    3134648 kB
+Inactive(anon):   425760 kB
+Active(file):    3788324 kB
+Inactive(file):  2045372 kB
 Unevictable:          48 kB
 Mlocked:              48 kB
 SwapTotal:             0 kB
 SwapFree:              0 kB
-Dirty:               928 kB
+Dirty:               984 kB
 Writeback:             0 kB
-AnonPages:       2971820 kB
-Mapped:          1096360 kB
-Shmem:            316456 kB
-Slab:             568912 kB
-SReclaimable:     388528 kB
-SUnreclaim:       180384 kB
-KernelStack:       18460 kB
-PageTables:        70548 kB
+AnonPages:       3131976 kB
+Mapped:          1214672 kB
+Shmem:            428212 kB
+Slab:             655588 kB
+SReclaimable:     465228 kB
+SUnreclaim:       190360 kB
+KernelStack:       18864 kB
+PageTables:        72340 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
 CommitLimit:     8177276 kB
-Committed_AS:   10199480 kB
+Committed_AS:   10642928 kB
 VmallocTotal:   34359738367 kB
 VmallocUsed:           0 kB
 VmallocChunk:          0 kB
@@ -362,8 +508,8 @@ HugePages_Free:        0
 HugePages_Rsvd:        0
 HugePages_Surp:        0
 Hugepagesize:       2048 kB
-DirectMap4k:      502680 kB
-DirectMap2M:    10960896 kB
+DirectMap4k:      510872 kB
+DirectMap2M:    10952704 kB
 DirectMap1G:     5242880 kB
 
 ####################
@@ -490,7 +636,7 @@ Rotation Rate:    Solid State Device
 Device is:        In smartctl database [for details use: -P show]
 ATA Version is:   ACS-2, ATA8-ACS T13/1699-D revision 4c
 SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
-Local Time is:    Mon Dec 17 13:17:12 2018 CET
+Local Time is:    Mon Dec 17 14:07:46 2018 CET
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -511,7 +657,7 @@ Form Factor:      2.5 inches
 Device is:        Not in smartctl database [for details use: -P showall]
 ATA Version is:   ACS-2 T13/2015-D revision 3
 SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
-Local Time is:    Mon Dec 17 13:17:12 2018 CET
+Local Time is:    Mon Dec 17 14:07:46 2018 CET
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -533,7 +679,7 @@ Form Factor:      3.5 inches
 Device is:        In smartctl database [for details use: -P show]
 ATA Version is:   ACS-2, ACS-3 T13/2161-D revision 3b
 SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
-Local Time is:    Mon Dec 17 13:17:12 2018 CET
+Local Time is:    Mon Dec 17 14:07:46 2018 CET
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -605,7 +751,7 @@ cpu family	: 6
 model		: 6
 model name	: QEMU Virtual CPU version 2.5+
 stepping	: 3
-cpu MHz		: 4200.023
+cpu MHz		: 4200.065
 cache size	: 512 KB
 physical id	: 0
 siblings	: 1
@@ -619,7 +765,7 @@ cpuid level	: 13
 wp		: yes
 flags		: fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx lm nopl pni cx16 hypervisor lahf_lm svm 3dnowprefetch vmmcall
 bugs		: fxsave_leak sysret_ss_attrs spectre_v1 spectre_v2 spec_store_bypass
-bogomips	: 8400.04
+bogomips	: 8400.13
 TLB size	: 1024 4K pages
 clflush size	: 64
 cache_alignment	: 64
@@ -663,36 +809,36 @@ Processor Information
 ###### MEMINFO #####
 ####################
 MemTotal:        2052496 kB
-MemFree:         1942732 kB
-MemAvailable:    1901348 kB
-Buffers:            8880 kB
-Cached:            51524 kB
+MemFree:         1942848 kB
+MemAvailable:    1901524 kB
+Buffers:            8884 kB
+Cached:            51616 kB
 SwapCached:            0 kB
-Active:            46620 kB
-Inactive:          27496 kB
-Active(anon):      13860 kB
+Active:            45264 kB
+Inactive:          28784 kB
+Active(anon):      13672 kB
 Inactive(anon):     2772 kB
-Active(file):      32760 kB
-Inactive(file):    24724 kB
+Active(file):      31592 kB
+Inactive(file):    26012 kB
 Unevictable:           0 kB
 Mlocked:               0 kB
 SwapTotal:       2094076 kB
 SwapFree:        2094076 kB
 Dirty:                16 kB
 Writeback:             0 kB
-AnonPages:         13744 kB
-Mapped:            16604 kB
+AnonPages:         13568 kB
+Mapped:            16704 kB
 Shmem:              2924 kB
-Slab:              19172 kB
+Slab:              19136 kB
 SReclaimable:      10620 kB
-SUnreclaim:         8552 kB
-KernelStack:        1384 kB
-PageTables:         2460 kB
+SUnreclaim:         8516 kB
+KernelStack:        1308 kB
+PageTables:         2416 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
 CommitLimit:     3120324 kB
-Committed_AS:      58312 kB
+Committed_AS:      57720 kB
 VmallocTotal:   34359738367 kB
 VmallocUsed:           0 kB
 VmallocChunk:          0 kB
@@ -705,8 +851,8 @@ HugePages_Free:        0
 HugePages_Rsvd:        0
 HugePages_Surp:        0
 Hugepagesize:       2048 kB
-DirectMap4k:       42880 kB
-DirectMap2M:     2054144 kB
+DirectMap4k:       40832 kB
+DirectMap2M:     2056192 kB
 
 ####################
 ###### MEM DEV #####
@@ -756,7 +902,7 @@ User Capacity:    10,737,418,240 bytes [10.7 GB]
 Sector Size:      512 bytes logical/physical
 Device is:        Not in smartctl database [for details use: -P showall]
 ATA Version is:   ATA/ATAPI-7, ATA/ATAPI-5 published, ANSI NCITS 340-2000
-Local Time is:    Mon Dec 17 07:17:39 2018 EST
+Local Time is:    Mon Dec 17 08:08:14 2018 EST
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 

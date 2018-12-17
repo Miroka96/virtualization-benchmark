@@ -1,7 +1,11 @@
 #!/bin/bash
 
 if ! which smartctl > /dev/null
-then sudo apt-get install smartmontools
+then sudo apt-get install -y smartmontools 1>&2
+fi
+
+if ! which dmidecode > /dev/null
+then sudo apt-get install -y dmidecode 1>&2
 fi
 
 echo "####################"
