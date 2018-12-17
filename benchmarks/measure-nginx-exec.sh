@@ -1,13 +1,16 @@
 #!/bin/bash -e
 
-if [ -z "$1" ]
-then URL="http://localhost/big.data"
-else URL="$1"
+URL="http://localhost/big.data"
+THREADS=20
+ITERATIONS=100
+
+
+if ! [ -z "$1" ]
+then URL="$1"
 fi
 
-if [ -z "$2" ]
-then THREADS=2
-else THREADS="$2"
+if ! [ -z "$2" ]
+then THREADS="$2"
 fi
 
 if which wget > /dev/null
@@ -19,7 +22,16 @@ else
 	exit 1
 fi
 
-for i in $(seq $THREADS)
-do $DOWNLOADER 2> /dev/null &
+(time
+(for i in $(seq $THREADS)
+do sh -c "for j in \$(seq $ITERATIONS); do $DOWNLOADER; done" & 2> /dev/null &
+# need to introduce a loop
+
 done
 wait
+)) 2>&1 |
+grep real |
+egrep -o "[0-9,.]+" |
+tail -n 1 |
+sed "s/,/./g"
+

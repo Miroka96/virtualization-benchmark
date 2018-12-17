@@ -12,4 +12,4 @@ fi
 
 DATAFILE=/var/www/html/big.data
 
-dd if=/dev/random of=$OF bs=1M count=512
+dd if=/dev/urandom of=$DATAFILE bs=64M count=8 iflag=fullblock

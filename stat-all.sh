@@ -7,6 +7,8 @@ BASE=$(realpath $(dirname $(
 	fi
 )))
 
+sudo cp $BASE/platforms/performanceStats.sh /var/www/html/
+
 OUT="$BASE/environment.txt"
 
 if [ -e $OUT ]
@@ -15,7 +17,7 @@ fi
 
 touch $OUT
 
-for platform in $(ls -F platforms | grep /)
+for platform in $(ls -F $BASE/platforms | grep /)
 do
 	cd "$BASE/platforms/${platform}"
 	if [ -e stat.sh ]

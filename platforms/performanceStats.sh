@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 if ! which smartctl > /dev/null
 then sudo apt-get install smartmontools
@@ -54,4 +54,22 @@ echo "####################"
 echo "###### KERNEL ######"
 echo "####################"
 uname -a
+echo
+
+echo "####################"
+echo "####### GCC ########"
+echo "####################"
+gcc --version
+echo
+
+echo "####################"
+echo "###### NGINX #######"
+echo "####################"
+nginx -V 2>&1
+echo
+
+echo "####################"
+echo "####### FIO ########"
+echo "####################"
+fio --version
 echo
