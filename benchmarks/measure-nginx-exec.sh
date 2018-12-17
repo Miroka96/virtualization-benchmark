@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 URL="http://localhost/big.data"
-THREADS=20
-ITERATIONS=12
+THREADS=16
+ITERATIONS=1
 
 
 if ! [ -z "$1" ]

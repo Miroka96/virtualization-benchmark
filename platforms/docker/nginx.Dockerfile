@@ -1,7 +1,8 @@
 FROM debian:stable
 RUN apt-get update && apt-get install -y \
-    nginx 
-ENV CLOUD DOCKER
+    nginx
+ENV CLOUD docker
 COPY benchmarks benchmarks
+RUN cd benchmarks && ./nginx-prepare.sh
 EXPOSE 80
-CMD  cd benchmarks && ./measure-nginx.sh
+CMD nginx -g "daemon off;"

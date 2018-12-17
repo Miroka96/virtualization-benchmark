@@ -18,7 +18,7 @@ if [ -e $CSV ]
 then rm $CSV
 fi
 
-echo "time,value" > $CSV
+echo "time,value" | tee $CSV
 
 for i in $(seq 48)
 do echo "$(date +%s),$(time $EXECUTABLE ${@:5})" | tee -a $CSV
