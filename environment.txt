@@ -1,4 +1,217 @@
 ##############################
+########## kvm ###########
+##############################
+
+####################
+###### CPUINFO #####
+####################
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 6
+model name	: QEMU Virtual CPU version 2.5+
+stepping	: 3
+microcode	: 0x1
+cpu MHz		: 4200.000
+cache size	: 16384 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pse36 clflush mmx fxsr sse sse2 syscall nx lm rep_good nopl xtopology pni vmx cx16 x2apic hypervisor lahf_lm kaiser tpr_shadow vnmi flexpriority ept vpid
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 8400.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+####################
+###### CPU DEV #####
+####################
+# dmidecode 3.0
+Getting SMBIOS data from sysfs.
+SMBIOS 2.8 present.
+
+Handle 0x0400, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 0
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
+
+####################
+###### MEMINFO #####
+####################
+MemTotal:        2052464 kB
+MemFree:         1940416 kB
+MemAvailable:    1900468 kB
+Buffers:            9040 kB
+Cached:            54104 kB
+SwapCached:            0 kB
+Active:            49500 kB
+Inactive:          27380 kB
+Active(anon):      13896 kB
+Inactive(anon):     2796 kB
+Active(file):      35604 kB
+Inactive(file):    24584 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       2094076 kB
+SwapFree:        2094076 kB
+Dirty:                20 kB
+Writeback:             0 kB
+AnonPages:         13732 kB
+Mapped:            17796 kB
+Shmem:              2912 kB
+Slab:              19452 kB
+SReclaimable:      10792 kB
+SUnreclaim:         8660 kB
+KernelStack:        1296 kB
+PageTables:         2324 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     3120308 kB
+Committed_AS:      54316 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       38784 kB
+DirectMap2M:     2058240 kB
+
+####################
+###### MEM DEV #####
+####################
+# dmidecode 3.0
+Getting SMBIOS data from sysfs.
+SMBIOS 2.8 present.
+
+Handle 0x1100, DMI type 17, 40 bytes
+Memory Device
+	Array Handle: 0x1000
+	Error Information Handle: Not Provided
+	Total Width: Unknown
+	Data Width: Unknown
+	Size: 2048 MB
+	Form Factor: DIMM
+	Set: None
+	Locator: DIMM 0
+	Bank Locator: Not Specified
+	Type: RAM
+	Type Detail: Other
+	Speed: Unknown
+	Manufacturer: QEMU
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Rank: Unknown
+	Configured Clock Speed: Unknown
+	Minimum Voltage: Unknown
+	Maximum Voltage: Unknown
+	Configured Voltage: Unknown
+
+
+####################
+###### HDD DEV #####
+####################
+
+###### /dev/sda ####
+smartctl 6.6 2016-05-31 r4324 [x86_64-linux-4.9.0-8-amd64] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     QEMU HARDDISK
+Serial Number:    QM00001
+Firmware Version: 2.5+
+User Capacity:    10,737,418,240 bytes [10.7 GB]
+Sector Size:      512 bytes logical/physical
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ATA/ATAPI-7, ATA/ATAPI-5 published, ANSI NCITS 340-2000
+Local Time is:    Mon Dec 17 07:17:10 2018 EST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+
+
+####################
+###### OS RLSE #####
+####################
+
+###### /etc/os-release ####
+PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+NAME="Debian GNU/Linux"
+VERSION_ID="9"
+VERSION="9 (stretch)"
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+
+####################
+###### KERNEL ######
+####################
+Linux debiantestsystem 4.9.0-8-amd64 #1 SMP Debian 4.9.130-2 (2018-10-27) x86_64 GNU/Linux
+
+####################
+####### GCC ########
+####################
+gcc (Debian 6.3.0-18+deb9u1) 6.3.0 20170516
+Copyright (C) 2016 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+####################
+###### NGINX #######
+####################
+nginx version: nginx/1.10.3
+built with OpenSSL 1.1.0f  25 May 2017 (running with OpenSSL 1.1.0j  20 Nov 2018)
+TLS SNI support enabled
+configure arguments: --with-cc-opt='-g -O2 -fdebug-prefix-map=/build/nginx-0TiIP5/nginx-1.10.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2' --with-ld-opt='-Wl,-z,relro -Wl,-z,now' --prefix=/usr/share/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --modules-path=/usr/lib/nginx/modules --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi --with-debug --with-pcre-jit --with-ipv6 --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_v2_module --with-http_dav_module --with-http_slice_module --with-threads --with-http_addition_module --with-http_geoip_module=dynamic --with-http_gunzip_module --with-http_gzip_static_module --with-http_image_filter_module=dynamic --with-http_sub_module --with-http_xslt_module=dynamic --with-stream=dynamic --with-stream_ssl_module --with-mail=dynamic --with-mail_ssl_module --add-dynamic-module=/build/nginx-0TiIP5/nginx-1.10.3/debian/modules/nginx-auth-pam --add-dynamic-module=/build/nginx-0TiIP5/nginx-1.10.3/debian/modules/nginx-dav-ext-module --add-dynamic-module=/build/nginx-0TiIP5/nginx-1.10.3/debian/modules/nginx-echo --add-dynamic-module=/build/nginx-0TiIP5/nginx-1.10.3/debian/modules/nginx-upstream-fair --add-dynamic-module=/build/nginx-0TiIP5/nginx-1.10.3/debian/modules/ngx_http_substitutions_filter_module
+
+####################
+####### FIO ########
+####################
+fio-2.16
+
+
+##############################
 ########## native ###########
 ##############################
 
@@ -12,7 +225,7 @@ model		: 158
 model name	: Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz
 stepping	: 9
 microcode	: 0x8e
-cpu MHz		: 4500.001
+cpu MHz		: 4500.200
 cache size	: 8192 KB
 physical id	: 0
 siblings	: 8
@@ -105,41 +318,41 @@ Processor Information
 ###### MEMINFO #####
 ####################
 MemTotal:       16354556 kB
-MemFree:         7716960 kB
-MemAvailable:   11186240 kB
-Buffers:          541140 kB
-Cached:          3154888 kB
+MemFree:         8655168 kB
+MemAvailable:   12240856 kB
+Buffers:          545324 kB
+Cached:          3309616 kB
 SwapCached:            0 kB
-Active:          5387976 kB
-Inactive:        2374196 kB
-Active(anon):    4068556 kB
-Inactive(anon):   266460 kB
-Active(file):    1319420 kB
-Inactive(file):  2107736 kB
+Active:          4429700 kB
+Inactive:        2396452 kB
+Active(anon):    2973616 kB
+Inactive(anon):   314048 kB
+Active(file):    1456084 kB
+Inactive(file):  2082404 kB
 Unevictable:          48 kB
 Mlocked:              48 kB
 SwapTotal:             0 kB
 SwapFree:              0 kB
-Dirty:               168 kB
+Dirty:               928 kB
 Writeback:             0 kB
-AnonPages:       4065960 kB
-Mapped:          1057572 kB
-Shmem:            268876 kB
-Slab:             572852 kB
-SReclaimable:     383452 kB
-SUnreclaim:       189400 kB
-KernelStack:       17400 kB
-PageTables:        72480 kB
+AnonPages:       2971820 kB
+Mapped:          1096360 kB
+Shmem:            316456 kB
+Slab:             568912 kB
+SReclaimable:     388528 kB
+SUnreclaim:       180384 kB
+KernelStack:       18460 kB
+PageTables:        70548 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
 CommitLimit:     8177276 kB
-Committed_AS:   12604748 kB
+Committed_AS:   10199480 kB
 VmallocTotal:   34359738367 kB
 VmallocUsed:           0 kB
 VmallocChunk:          0 kB
 HardwareCorrupted:     0 kB
-AnonHugePages:    630784 kB
+AnonHugePages:     51200 kB
 ShmemHugePages:        0 kB
 ShmemPmdMapped:        0 kB
 CmaTotal:              0 kB
@@ -277,7 +490,7 @@ Rotation Rate:    Solid State Device
 Device is:        In smartctl database [for details use: -P show]
 ATA Version is:   ACS-2, ATA8-ACS T13/1699-D revision 4c
 SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
-Local Time is:    Mon Dec 17 12:40:02 2018 CET
+Local Time is:    Mon Dec 17 13:17:12 2018 CET
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -298,7 +511,7 @@ Form Factor:      2.5 inches
 Device is:        Not in smartctl database [for details use: -P showall]
 ATA Version is:   ACS-2 T13/2015-D revision 3
 SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
-Local Time is:    Mon Dec 17 12:40:02 2018 CET
+Local Time is:    Mon Dec 17 13:17:12 2018 CET
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -320,7 +533,7 @@ Form Factor:      3.5 inches
 Device is:        In smartctl database [for details use: -P show]
 ATA Version is:   ACS-2, ACS-3 T13/2161-D revision 3b
 SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
-Local Time is:    Mon Dec 17 12:40:02 2018 CET
+Local Time is:    Mon Dec 17 13:17:12 2018 CET
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -392,7 +605,7 @@ cpu family	: 6
 model		: 6
 model name	: QEMU Virtual CPU version 2.5+
 stepping	: 3
-cpu MHz		: 4200.069
+cpu MHz		: 4200.023
 cache size	: 512 KB
 physical id	: 0
 siblings	: 1
@@ -406,7 +619,7 @@ cpuid level	: 13
 wp		: yes
 flags		: fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx lm nopl pni cx16 hypervisor lahf_lm svm 3dnowprefetch vmmcall
 bugs		: fxsave_leak sysret_ss_attrs spectre_v1 spectre_v2 spec_store_bypass
-bogomips	: 8400.13
+bogomips	: 8400.04
 TLB size	: 1024 4K pages
 clflush size	: 64
 cache_alignment	: 64
@@ -450,36 +663,36 @@ Processor Information
 ###### MEMINFO #####
 ####################
 MemTotal:        2052496 kB
-MemFree:         1515728 kB
-MemAvailable:    1855900 kB
-Buffers:           32456 kB
-Cached:           423048 kB
+MemFree:         1942732 kB
+MemAvailable:    1901348 kB
+Buffers:            8880 kB
+Cached:            51524 kB
 SwapCached:            0 kB
-Active:           221080 kB
-Inactive:         250528 kB
-Active(anon):      16736 kB
-Inactive(anon):     2296 kB
-Active(file):     204344 kB
-Inactive(file):   248232 kB
+Active:            46620 kB
+Inactive:          27496 kB
+Active(anon):      13860 kB
+Inactive(anon):     2772 kB
+Active(file):      32760 kB
+Inactive(file):    24724 kB
 Unevictable:           0 kB
 Mlocked:               0 kB
 SwapTotal:       2094076 kB
 SwapFree:        2094076 kB
-Dirty:                12 kB
+Dirty:                16 kB
 Writeback:             0 kB
-AnonPages:         16156 kB
-Mapped:            18444 kB
-Shmem:              2932 kB
-Slab:              48032 kB
-SReclaimable:      38692 kB
-SUnreclaim:         9340 kB
-KernelStack:        1264 kB
-PageTables:         2560 kB
+AnonPages:         13744 kB
+Mapped:            16604 kB
+Shmem:              2924 kB
+Slab:              19172 kB
+SReclaimable:      10620 kB
+SUnreclaim:         8552 kB
+KernelStack:        1384 kB
+PageTables:         2460 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
 CommitLimit:     3120324 kB
-Committed_AS:      56488 kB
+Committed_AS:      58312 kB
 VmallocTotal:   34359738367 kB
 VmallocUsed:           0 kB
 VmallocChunk:          0 kB
@@ -543,7 +756,7 @@ User Capacity:    10,737,418,240 bytes [10.7 GB]
 Sector Size:      512 bytes logical/physical
 Device is:        Not in smartctl database [for details use: -P showall]
 ATA Version is:   ATA/ATAPI-7, ATA/ATAPI-5 published, ANSI NCITS 340-2000
-Local Time is:    Mon Dec 17 06:40:03 2018 EST
+Local Time is:    Mon Dec 17 07:17:39 2018 EST
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 

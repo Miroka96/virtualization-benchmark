@@ -2,7 +2,7 @@
 
 USER := $(shell whoami)
 #OPTIONS="-vnc :1"
-QEMURUN = qemu-system-x86_64 -hda myDebian.qcow2 -m 2048 -net nic $(OPTIONS)
+QEMURUN = qemu-system-x86_64 -hda ../qemu/myDebian.qcow2 -m 2048 -net nic -enable-kvm $(OPTIONS)
 
 run:
 	sudo $(QEMURUN) -net tap
