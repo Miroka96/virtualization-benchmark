@@ -12,7 +12,7 @@ model		: 158
 model name	: Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz
 stepping	: 9
 microcode	: 0x8e
-cpu MHz		: 4496.683
+cpu MHz		: 993.406
 cache size	: 8192 KB
 physical id	: 0
 siblings	: 8
@@ -41,37 +41,37 @@ Scanning /dev/mem for entry point.
 ####################
 ###### MEMINFO #####
 ####################
-MemTotal:       16354556 kB
-MemFree:         5973024 kB
-MemAvailable:   11930516 kB
-Buffers:          627196 kB
-Cached:          5634340 kB
+MemTotal:       16354564 kB
+MemFree:         6000588 kB
+MemAvailable:   13398864 kB
+Buffers:          317536 kB
+Cached:          7399528 kB
 SwapCached:            0 kB
-Active:          6946880 kB
-Inactive:        2471108 kB
-Active(anon):    3158916 kB
-Inactive(anon):   425536 kB
-Active(file):    3787964 kB
-Inactive(file):  2045572 kB
-Unevictable:          48 kB
-Mlocked:              48 kB
+Active:          3148932 kB
+Inactive:        6610252 kB
+Active(anon):    2043732 kB
+Inactive(anon):   135848 kB
+Active(file):    1105200 kB
+Inactive(file):  6474404 kB
+Unevictable:          32 kB
+Mlocked:              32 kB
 SwapTotal:             0 kB
 SwapFree:              0 kB
-Dirty:              1172 kB
+Dirty:              1676 kB
 Writeback:             0 kB
-AnonPages:       3155908 kB
-Mapped:          1251516 kB
-Shmem:            428004 kB
-Slab:             656680 kB
-SReclaimable:     465284 kB
-SUnreclaim:       191396 kB
-KernelStack:       19228 kB
-PageTables:        72124 kB
+AnonPages:       2041520 kB
+Mapped:           947592 kB
+Shmem:            137752 kB
+Slab:             316780 kB
+SReclaimable:     150836 kB
+SUnreclaim:       165944 kB
+KernelStack:       14956 kB
+PageTables:        59524 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
-CommitLimit:     8177276 kB
-Committed_AS:   10792268 kB
+CommitLimit:     8177280 kB
+Committed_AS:    8305644 kB
 VmallocTotal:   34359738367 kB
 VmallocUsed:           0 kB
 VmallocChunk:          0 kB
@@ -86,9 +86,9 @@ HugePages_Free:        0
 HugePages_Rsvd:        0
 HugePages_Surp:        0
 Hugepagesize:       2048 kB
-DirectMap4k:      510872 kB
-DirectMap2M:    10952704 kB
-DirectMap1G:     5242880 kB
+DirectMap4k:      445336 kB
+DirectMap2M:     8921088 kB
+DirectMap1G:     7340032 kB
 
 ####################
 ###### MEM DEV #####
@@ -119,7 +119,7 @@ BUG_REPORT_URL="https://bugs.debian.org/"
 ####################
 ###### KERNEL ######
 ####################
-Linux d4dd9c402693 4.15.0-42-generic #45-Ubuntu SMP Thu Nov 15 19:32:57 UTC 2018 x86_64 GNU/Linux
+Linux 9ea64ba092ae 4.15.0-42-generic #45-Ubuntu SMP Thu Nov 15 19:32:57 UTC 2018 x86_64 GNU/Linux
 
 ####################
 ####### GCC ########
@@ -210,41 +210,216 @@ Processor Information
 	Thread Count: 1
 	Characteristics: None
 
+Handle 0x0401, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 1
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
+Handle 0x0402, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 2
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
+Handle 0x0403, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 3
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
+Handle 0x0404, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 4
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
+Handle 0x0405, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 5
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
+Handle 0x0406, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 6
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
+Handle 0x0407, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 7
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
 
 ####################
 ###### MEMINFO #####
 ####################
-MemTotal:        2052464 kB
-MemFree:         1939696 kB
-MemAvailable:    1899760 kB
+MemTotal:        2051480 kB
+MemFree:         1920536 kB
+MemAvailable:    1881104 kB
 Buffers:            9028 kB
-Cached:            54088 kB
+Cached:            54024 kB
 SwapCached:            0 kB
-Active:            50356 kB
-Inactive:          27044 kB
-Active(anon):      14436 kB
-Inactive(anon):     2780 kB
-Active(file):      35920 kB
-Inactive(file):    24264 kB
+Active:            54284 kB
+Inactive:          26176 kB
+Active(anon):      17296 kB
+Inactive(anon):     2792 kB
+Active(file):      36988 kB
+Inactive(file):    23384 kB
 Unevictable:           0 kB
 Mlocked:               0 kB
 SwapTotal:       2094076 kB
 SwapFree:        2094076 kB
-Dirty:               348 kB
+Dirty:               864 kB
 Writeback:             0 kB
-AnonPages:         14276 kB
-Mapped:            17456 kB
-Shmem:              2936 kB
-Slab:              19600 kB
-SReclaimable:      10820 kB
-SUnreclaim:         8780 kB
-KernelStack:        1304 kB
-PageTables:         2324 kB
+AnonPages:         17204 kB
+Mapped:            17820 kB
+Shmem:              2940 kB
+Slab:              26412 kB
+SReclaimable:      11628 kB
+SUnreclaim:        14784 kB
+KernelStack:        2520 kB
+PageTables:         4224 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
-CommitLimit:     3120308 kB
-Committed_AS:      50372 kB
+CommitLimit:     3119816 kB
+Committed_AS:      74116 kB
 VmallocTotal:   34359738367 kB
 VmallocUsed:           0 kB
 VmallocChunk:          0 kB
@@ -257,8 +432,8 @@ HugePages_Free:        0
 HugePages_Rsvd:        0
 HugePages_Surp:        0
 Hugepagesize:       2048 kB
-DirectMap4k:       38784 kB
-DirectMap2M:     2058240 kB
+DirectMap4k:       51068 kB
+DirectMap2M:     2045952 kB
 
 ####################
 ###### MEM DEV #####
@@ -308,7 +483,7 @@ User Capacity:    10,737,418,240 bytes [10.7 GB]
 Sector Size:      512 bytes logical/physical
 Device is:        Not in smartctl database [for details use: -P showall]
 ATA Version is:   ATA/ATAPI-7, ATA/ATAPI-5 published, ANSI NCITS 340-2000
-Local Time is:    Mon Dec 17 08:07:43 2018 EST
+Local Time is:    Tue Dec 18 07:01:40 2018 EST
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -371,7 +546,7 @@ model		: 158
 model name	: Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz
 stepping	: 9
 microcode	: 0x8e
-cpu MHz		: 4500.822
+cpu MHz		: 4415.309
 cache size	: 8192 KB
 physical id	: 0
 siblings	: 8
@@ -463,42 +638,42 @@ Processor Information
 ####################
 ###### MEMINFO #####
 ####################
-MemTotal:       16354556 kB
-MemFree:         5999320 kB
-MemAvailable:   11956916 kB
-Buffers:          627276 kB
-Cached:          5634636 kB
+MemTotal:       16354564 kB
+MemFree:         5959324 kB
+MemAvailable:   13415664 kB
+Buffers:          316228 kB
+Cached:          7464216 kB
 SwapCached:            0 kB
-Active:          6922972 kB
-Inactive:        2471132 kB
-Active(anon):    3134648 kB
-Inactive(anon):   425760 kB
-Active(file):    3788324 kB
-Inactive(file):  2045372 kB
+Active:          3144324 kB
+Inactive:        6659588 kB
+Active(anon):    2025328 kB
+Inactive(anon):   139560 kB
+Active(file):    1118996 kB
+Inactive(file):  6520028 kB
 Unevictable:          48 kB
 Mlocked:              48 kB
 SwapTotal:             0 kB
 SwapFree:              0 kB
-Dirty:               984 kB
+Dirty:              5196 kB
 Writeback:             0 kB
-AnonPages:       3131976 kB
-Mapped:          1214672 kB
-Shmem:            428212 kB
-Slab:             655588 kB
-SReclaimable:     465228 kB
-SUnreclaim:       190360 kB
-KernelStack:       18864 kB
-PageTables:        72340 kB
+AnonPages:       2023004 kB
+Mapped:           921308 kB
+Shmem:            141416 kB
+Slab:             314860 kB
+SReclaimable:     148124 kB
+SUnreclaim:       166736 kB
+KernelStack:       14876 kB
+PageTables:        59072 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
-CommitLimit:     8177276 kB
-Committed_AS:   10642928 kB
+CommitLimit:     8177280 kB
+Committed_AS:    8143868 kB
 VmallocTotal:   34359738367 kB
 VmallocUsed:           0 kB
 VmallocChunk:          0 kB
 HardwareCorrupted:     0 kB
-AnonHugePages:     51200 kB
+AnonHugePages:     69632 kB
 ShmemHugePages:        0 kB
 ShmemPmdMapped:        0 kB
 CmaTotal:              0 kB
@@ -508,9 +683,9 @@ HugePages_Free:        0
 HugePages_Rsvd:        0
 HugePages_Surp:        0
 Hugepagesize:       2048 kB
-DirectMap4k:      510872 kB
-DirectMap2M:    10952704 kB
-DirectMap1G:     5242880 kB
+DirectMap4k:      445336 kB
+DirectMap2M:     8921088 kB
+DirectMap1G:     7340032 kB
 
 ####################
 ###### MEM DEV #####
@@ -636,7 +811,7 @@ Rotation Rate:    Solid State Device
 Device is:        In smartctl database [for details use: -P show]
 ATA Version is:   ACS-2, ATA8-ACS T13/1699-D revision 4c
 SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
-Local Time is:    Mon Dec 17 14:07:46 2018 CET
+Local Time is:    Tue Dec 18 13:01:43 2018 CET
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -657,7 +832,7 @@ Form Factor:      2.5 inches
 Device is:        Not in smartctl database [for details use: -P showall]
 ATA Version is:   ACS-2 T13/2015-D revision 3
 SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
-Local Time is:    Mon Dec 17 14:07:46 2018 CET
+Local Time is:    Tue Dec 18 13:01:43 2018 CET
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -679,7 +854,7 @@ Form Factor:      3.5 inches
 Device is:        In smartctl database [for details use: -P show]
 ATA Version is:   ACS-2, ACS-3 T13/2161-D revision 3b
 SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
-Local Time is:    Mon Dec 17 14:07:46 2018 CET
+Local Time is:    Tue Dec 18 13:01:43 2018 CET
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -751,7 +926,7 @@ cpu family	: 6
 model		: 6
 model name	: QEMU Virtual CPU version 2.5+
 stepping	: 3
-cpu MHz		: 4200.065
+cpu MHz		: 4200.268
 cache size	: 512 KB
 physical id	: 0
 siblings	: 1
@@ -765,7 +940,7 @@ cpuid level	: 13
 wp		: yes
 flags		: fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx lm nopl pni cx16 hypervisor lahf_lm svm 3dnowprefetch vmmcall
 bugs		: fxsave_leak sysret_ss_attrs spectre_v1 spectre_v2 spec_store_bypass
-bogomips	: 8400.13
+bogomips	: 8400.53
 TLB size	: 1024 4K pages
 clflush size	: 64
 cache_alignment	: 64
@@ -804,41 +979,216 @@ Processor Information
 	Thread Count: 1
 	Characteristics: None
 
+Handle 0x0401, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 1
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
+Handle 0x0402, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 2
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
+Handle 0x0403, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 3
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
+Handle 0x0404, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 4
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
+Handle 0x0405, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 5
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
+Handle 0x0406, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 6
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
+Handle 0x0407, DMI type 4, 42 bytes
+Processor Information
+	Socket Designation: CPU 7
+	Type: Central Processor
+	Family: Other
+	Manufacturer: QEMU
+	ID: 63 06 00 00 FD FB 8B 07
+	Version: pc-i440fx-bionic
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Core Count: 1
+	Core Enabled: 1
+	Thread Count: 1
+	Characteristics: None
+
 
 ####################
 ###### MEMINFO #####
 ####################
-MemTotal:        2052496 kB
-MemFree:         1942848 kB
-MemAvailable:    1901524 kB
-Buffers:            8884 kB
-Cached:            51616 kB
+MemTotal:        2051512 kB
+MemFree:         1922928 kB
+MemAvailable:    1882972 kB
+Buffers:            8904 kB
+Cached:            53576 kB
 SwapCached:            0 kB
-Active:            45264 kB
-Inactive:          28784 kB
-Active(anon):      13672 kB
-Inactive(anon):     2772 kB
-Active(file):      31592 kB
-Inactive(file):    26012 kB
+Active:            53732 kB
+Inactive:          26088 kB
+Active(anon):      17488 kB
+Inactive(anon):     2804 kB
+Active(file):      36244 kB
+Inactive(file):    23284 kB
 Unevictable:           0 kB
 Mlocked:               0 kB
 SwapTotal:       2094076 kB
 SwapFree:        2094076 kB
-Dirty:                16 kB
+Dirty:               256 kB
 Writeback:             0 kB
-AnonPages:         13568 kB
-Mapped:            16704 kB
-Shmem:              2924 kB
-Slab:              19136 kB
-SReclaimable:      10620 kB
-SUnreclaim:         8516 kB
-KernelStack:        1308 kB
-PageTables:         2416 kB
+AnonPages:         17536 kB
+Mapped:            17428 kB
+Shmem:              2952 kB
+Slab:              25056 kB
+SReclaimable:      11428 kB
+SUnreclaim:        13628 kB
+KernelStack:        2512 kB
+PageTables:         3972 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
-CommitLimit:     3120324 kB
-Committed_AS:      57720 kB
+CommitLimit:     3119832 kB
+Committed_AS:      74128 kB
 VmallocTotal:   34359738367 kB
 VmallocUsed:           0 kB
 VmallocChunk:          0 kB
@@ -851,8 +1201,8 @@ HugePages_Free:        0
 HugePages_Rsvd:        0
 HugePages_Surp:        0
 Hugepagesize:       2048 kB
-DirectMap4k:       40832 kB
-DirectMap2M:     2056192 kB
+DirectMap4k:       53116 kB
+DirectMap2M:     2043904 kB
 
 ####################
 ###### MEM DEV #####
@@ -902,7 +1252,7 @@ User Capacity:    10,737,418,240 bytes [10.7 GB]
 Sector Size:      512 bytes logical/physical
 Device is:        Not in smartctl database [for details use: -P showall]
 ATA Version is:   ATA/ATAPI-7, ATA/ATAPI-5 published, ANSI NCITS 340-2000
-Local Time is:    Mon Dec 17 08:08:14 2018 EST
+Local Time is:    Tue Dec 18 07:02:17 2018 EST
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
