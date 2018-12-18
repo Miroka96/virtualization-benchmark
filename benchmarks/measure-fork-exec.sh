@@ -10,10 +10,16 @@ if [ ! -e $EXECUTABLE ] ; then
 fi
 
 
-(time (for i in $(seq $ITERC)
+TIMINGS=$(time (for i in $(seq $ITERC)
 	do ./$EXECUTABLE 1 $PIDC > /dev/null
 	done)) 2>&1 |
 grep real |
-egrep -o "[0-9,.]+" |
-tail -n 1 |
-sed "s/,/./g"
+sed "s/,/./g" |
+egrep -o "[0-9,.]+")
+
+T=0
+for unit in $TIMINGS
+do T=$(echo "$T $unit" | awk '{printf $1 * 60 + $2}')
+done
+
+echo $T

@@ -26,6 +26,6 @@ export CLOUD
 ./measure-nginx.sh http://$IP/big.data
 mv $CLOUD-*.csv $OLDPWD
 
-
+cd $OLDPWD
 make shutdown 1>&2
 wait
