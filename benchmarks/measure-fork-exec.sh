@@ -10,7 +10,7 @@ if [ ! -e $EXECUTABLE ] ; then
 fi
 
 
-TIMINGS=$(time (for i in $(seq $ITERC)
+TIMINGS=$((time (for i in $(seq $ITERC)
 	do ./$EXECUTABLE 1 $PIDC > /dev/null
 	done)) 2>&1 |
 grep real |
