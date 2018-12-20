@@ -16,10 +16,12 @@ int main() {
       array[j] = i%10 +'0';
     //sleep(1);
     if(array == NULL){
-      perror(EXIT_FAILURE);
+      perror("Error: ");
+      exit(1);
     }
     sleep(1);
-    free(array);
+    free((void *) array);
   }
-  
+
+  return 0;
 }

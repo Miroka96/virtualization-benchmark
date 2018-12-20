@@ -32,9 +32,6 @@ run () {
                                 ;;
         esac
     done
-    echo ${namespaces[@]}
-    echo ${limits[@]}
-    echo $prog
     if [ ${#limits} != 0 ]; then
         name=${path##*/}
         for keyval in "${limits[@]}"; do
@@ -47,7 +44,6 @@ run () {
         echo $$ > /sys/fs/cgroup/$type/$name/tasks
     fi
     if [ ${#namespaces} = 0 ]; then
-        echo "$prog" $prog
         mount -t proc proc $path/proc 2>/dev/null
         unshare -p -f --mount-proc=$path/proc \
         chroot $path ${prog}
@@ -65,7 +61,6 @@ run () {
     
         
 }
-
 
 
 case $1 in 
