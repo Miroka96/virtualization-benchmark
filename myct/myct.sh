@@ -2,7 +2,7 @@
 
 init () {
     echo "init"
-    debootstrap stable $1 http://deb.debian.org/debian
+    debootstrap stable $1 http://deb.debian.org/debian 1>/dev/null
 }
 
 map () {
@@ -41,7 +41,6 @@ run () {
             type=${keyval%.*}
             key=${keyval%=*}
             val=${keyval##*=}
-            echo $key $name $val $type
             mkdir /sys/fs/cgroup/$type/$name/ 2>/dev/null
             echo $val > /sys/fs/cgroup/$type/$name/$key
         done
@@ -49,7 +48,7 @@ run () {
     fi
     if [ ${#namespaces} = 0 ]; then
         echo "$prog" $prog
-        #mount -t proc proc $path/proc 2>/dev/null
+        mount -t proc proc $path/proc 2>/dev/null
         unshare -p -f --mount-proc=$path/proc \
         chroot $path ${prog}
     else
@@ -58,7 +57,6 @@ run () {
             nstype=${nskeyval%%=*}
             pid=${nskeyval##*=}
             arg+='--'$nstype'=/proc/'$pid'/ns/'$nstype
-            echo $arg
         done
         nsenter $arg unshare -f --mount-proc=$path/proc \
         chroot $path ${prog}
@@ -69,7 +67,7 @@ run () {
 }
 
 
-echo "$$"
+
 case $1 in 
     init )  shift
             init "$@"
