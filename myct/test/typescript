@@ -1,0 +1,19 @@
+Script started on Do 20 Dez 2018 19:10:09 CET
+root@debian:/home/anton/myct# ./r[Kmq[Kyct.sh r[Kinit eleph
+init
+root@debian:/home/anton/myct# ./myct.sh map eleph test /test
+map
+eleph/test
+root@debian:/home/anton/myct# ./myct.sh run eleph -l memory.limit_in_bytes=300000000 -l memory.swappiness=0 /test/memmonster
+run
+
+memory.limit_in_bytes=300000000 memory.swappiness=0
+/test/memmonster
+Size 100000000 byte
+Size 200000000 byte
+Size 300000000 byte
+./myct.sh: Zeile 15: 25608 Getötet                unshare -p -f --mount-proc=$path/proc chroot $path ${prog}
+root@debian:/home/anton/myct# exit
+exit
+
+Script done on Do 20 Dez 2018 19:16:02 CET
