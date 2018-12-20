@@ -1,0 +1,10 @@
+Script started on Do 20 Dez 2018 18:21:05 CET
+root@debian:/home/anton/container# ./myct.sh init eleph 
+init
+^Croot@debian:/home/anton/container# cd..[K[K ..
+root@debian:/home/anton# mkdir myct
+root@debian:/home/anton# cp container/myct.sh myc[Kct.sh[K[K[K/myx[Kct.sh
+root@debian:/home/anton# exit
+exit
+
+Script done on Do 20 Dez 2018 18:22:49 CET
