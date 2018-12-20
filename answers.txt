@@ -1,11 +1,126 @@
 # Assignment 2 - Benchmark Questions
 
 ## CPU
+### Expectations 
+Native and Docker performance should have the highest performance, just followed by the the KVM (hardware-assisted) VM. They should be able to run without any necessary modifications and, therefore, are very fast. The emulated VM should have the lowest performance, because most instructions need to be translated before they can be executed.
+
+### Observations
+higher is better
+
+                mean           std
+docker  4.198101e+06  48180.673904
+kvm     4.408134e+06  28444.259919
+native  4.422355e+06  32471.105584
+qemu    6.160943e+04   1274.910799
+
+The expectations were right.
 
 ## Memory
+### Expectations
+Like for the CPU performance, the emulated VM should again be the slowest, maybe even due to the same reasons as before, the slow CPU.
+
+In addition, the kvm-VM should perform worse than last time, because memory pages need to be handled externally, either by hardware and/or the host operating system. In addition, page translation may cause some performance issues and there is only limited (finite) caching possible.
+
+Docker and native execution should be the fastest, because they can directly access the host system and host memory (or at least their assigned pages).
+
+### Observations
+lower is better
+
+             mean       std
+docker   0.535851  0.005816
+kvm      0.824458  0.019097
+native   0.535279  0.001219
+qemu    32.896531  0.214260
+
+The expectations were right.
 
 ## Disk
+random access
+
+### Expectations
+The VMs should be the worst, because their IO needs to go through two different stacks (guest and host) before it reaches the hardware. On this way, many traps are expected.
+
+Docker and the native execution should perform best, because they are sharing the same IO stack, which is also the shortest in this platform set.
+
+### Observations
+higher is better
+
+                mean           std
+docker  33052.104167  73752.320534
+kvm     98429.208333   5387.492181
+native  27353.375000  55003.787758
+qemu    25817.354167   2693.026886
+
+The expectations were completely wrong, because we did not consider that the benchmark tries to flush the caches. This should prevent benchmarking the cache performance and therefore the memory of the system. This cache flushing worked mostly fine on the native host and probably in the docker container too, even though it seems to be a bit limited there. In the VMs, the cache flushing should not be possible, because the benchmark inside the VM can only flush the guest OS caches and not the host ones. In such a constellation, the kvm-VM performed best (probably cached) and the emulated VM should have the same performance gain, but it is still slow, probably because of the emulated CPU.
+
+The Docker container performed slightly better than the native host, probably because it is not allowed to flush all host OS caches and therefore gained performance boosts from them.
+
+In some cases, the native VM experienced cache gains too. The standard deviations for native and Docker are especially high. In comparison, the emulated IO seems much more stable. 
+
+Some outliers of the native host or Docker are even higher than the best results of the kvm-VM, probably because of the duplicated IO stack (guest and host), which limits the possible performance, even though unwanted caching is used.
+
+### QEMU Disk Formats
+
+Used Disk Format: QCow2
+- sparse image file
+    - it grows while it is used
+    - the filsesystem is configured for the maximum size of the image
+
+The dynamic image growth might cause performance issues during execution every time the previous image size is exceeded. In addition, the image might perform worse, because the file blocks are wider spread over the hard drive which makes the access pattern somehow random. Furthermore, a block translation table might be necessary. 
 
 ## Fork
+### Expectations
+
+Forks and Syscalls cause many traps to switch from user mode to kernel mode. This cannot be done completely in VMs, because the guest OS would otherwise gain control over the host machine. Therefore VM executions need to be manipulated on binary level and cause additional performance loss.
+
+Because the syscall execution is CPU-intensive, the emulated VM is again expected to be the worst.
+
+The native execution should be the best, followed by the Docker environment which may suffer from more complex kernel functionality needed for the process encapsulation.
+
+### Observations
+lower is better
+
+              mean        std
+docker   12.746146   0.185072
+kvm      15.853042   0.227541
+native   11.537292   0.035008
+qemu    852.368354  11.228042
+
+The expectations were right, even though the hardware-VM proved to be quite fast.
+
+### Specialities using the Rump Kernel
+???
+
+Probably the Rump Kernel does not have a process scheduler by default, so it should be impossible to perform a fork or run the created process.
+
+This could possibly be solved by adding a scheduling feature to the Rump kernel.
 
 ## Nginx
+### Expectations
+
+The emulated VM is probably again the worst, followed by the hardware-VM which suffers from the duplicated IO stack (guest and host). 
+
+Docker should be quite good, because it uses an adapted IO stack in software (inside the kernel), but at least no completely duplicated one.
+
+The native execution should again be the best, because the network traffic does not need to go through the whole network stack.
+
+Hopefully Nginx uses caching, otherwise all performance is probably lost to the hard drive IO.
+
+### Observations
+lower is better
+
+             mean       std
+docker   1.655250  0.020435
+kvm     19.496000  2.391858
+native   0.975188  0.015777
+qemu     5.374396  1.744244
+
+The expectations were mostly right, even though the native performance is much higher than expected (1TB download within 6 minutes).
+
+Against the expectations, the software-VM was much faster than the hardware-VM, because probably the whole guest IO stack was skipped due to binary optimization or QEMU-based caching.
+
+Anyway, the variation of the emulated VM is still strange.
+
+### Correlation to Disk Benchmarks
+
+The performance order of this benchmark is inverse to the performance order of the disk benchmark. The caching effects and/or optimization possibilities are probably inverted.
