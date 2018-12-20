@@ -14,20 +14,62 @@ map () {
 
 run () {
     echo "run"
-    case $2 in
-        --namespace | -n)   echo "namespaces"
-                            ;;
-        * )                 run_new_name $1 "${@:3}"
-                            ;;
-    esac
+    path=$1
+    namespaces=()
+    limits=()
+    prog=''
+    while [ "$2" != "" ] && [ "$prog" = '' ]; do
+        case $2 in
+            --namespace | -n)   namespaces+=($3)
+                                shift
+                                shift
+                                ;;
+            --limit | -l )      limits+=($3)
+                                shift
+                                shift
+                                ;;
+            * )                 prog="${@:2}"
+                                ;;
+        esac
+    done
+    echo ${namespaces[@]}
+    echo ${limits[@]}
+    echo $prog
+    if [ ${#limits} != 0 ]; then
+        name=${path##*/}
+        for keyval in "${limits[@]}"; do
+            type=${keyval%.*}
+            key=${keyval%=*}
+            val=${keyval##*=}
+            echo $key $name $val $type
+            mkdir /sys/fs/cgroup/$type/$name/ 2>/dev/null
+            echo $val > /sys/fs/cgroup/$type/$name/$key
+        done
+        echo $$ > /sys/fs/cgroup/$type/$name/tasks
+    fi
+    if [ ${#namespaces} = 0 ]; then
+        echo "$prog" $prog
+        #mount -t proc proc $path/proc 2>/dev/null
+        unshare -p -f --mount-proc=$path/proc \
+        chroot $path ${prog}
+    else
+        arg=''
+        for nskeyval in "${namespaces[@]}"; do
+            nstype=${nskeyval%%=*}
+            pid=${nskeyval##*=}
+            arg+='--'$nstype'=/proc/'$pid'/ns/'$nstype
+            echo $arg
+        done
+        nsenter $arg unshare -f --mount-proc=$path/proc \
+        chroot $path ${prog}
+    fi
+    
+    
+        
 }
 
-run_new_name () {
-    mount -t proc proc $1/proc
-    unshare -p -f --mount-proc=$1/proc \
-    chroot $1 "${@:2}"
-}
 
+echo "$$"
 case $1 in 
     init )  shift
             init "$@"
